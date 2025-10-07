@@ -35,5 +35,5 @@ En modern och responsiv portfolio-webbplats byggd med Next.js, som visar mina pr
 
 1. Klona repository:
 ```bash
-git clone https://github.com/ditt-användarnamn/portfolio-nextjs.git
-cd portfolio-nextjs
+git clone https://github.com/ditt-användarnamn/portfolio2025.git
+cd portfolio2025
