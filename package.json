@@ -1,0 +1,21 @@
+{
+  "name": "portfolio2025",
+  "version": "1.0.0",
+  "description": "En modern och responsiv portfolio-webbplats byggd med Next.js, som visar mina projekt, färdigheter och erfarenheter som Frontend Developer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Looziolooz/portfolio2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Looziolooz/portfolio2025/issues"
+  },
+  "homepage": "https://github.com/Looziolooz/portfolio2025#readme"
+}
