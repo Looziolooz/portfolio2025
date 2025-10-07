@@ -2,7 +2,10 @@
 
 En modern och responsiv portfolio-webbplats byggd med Next.js, som visar mina projekt, färdigheter och erfarenheter som Frontend Developer.
 
-![Portfolio Screenshot](./public/images/screenshot.png)
+# Figma prototyp
+
+https://www.figma.com/proto/MImV0eILsagqykxDwo15VT/Portfolio?node-id=0-1&t=RvUM1Ll0uFO2DggZ-1
+
 
 ## 🌟 Features
 
