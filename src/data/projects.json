@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Music Releases",
+      "image": "/images/projects/project-music-releases-vite.png",
+      "tags": ["HTML5", "CSS3", "JavaScript", "APIs", "React"],
+      "description": "Spotify Album list displaying music releases with interactive features.",
+      "netlify": "https://musichology.netlify.app/",
+      "github": "https://github.com/Looziolooz/project-music-releases-vite",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Happy Thoughts",
+      "image": "/images/projects/project-happy-thoughts-vite.png",
+      "tags": ["HTML5", "CSS3", "JavaScript", "APIs", "React"],
+      "description": "Twitter/X clone but with just happy thoughts! A positive social media experience.",
+      "netlify": "https://app.netlify.com/sites/happyt/overview",
+      "github": "https://github.com/Technigo/project-happy-thoughts-vite",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Weather App",
+      "image": "/images/projects/weather-app.png",
+      "tags": ["HTML5", "CSS3", "JavaScript", "APIs"],
+      "description": "A small app that displays a four-day forecast of what the weather is like in a city.",
+      "netlify": "https://lorenzoweatherapp.netlify.app/",
+      "github": "https://github.com/Looziolooz/Lorenzo-project-weather-app",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "Chatbot",
+      "image": "/images/projects/lorenzo-version-project-chatbot.png",
+      "tags": ["HTML5", "CSS3", "JavaScript"],
+      "description": "Travel agency chatbot with interactive conversation flow.",
+      "netlify": "https://planetagency.netlify.app/",
+      "github": "https://github.com/Looziolooz/lorenzo-version-project-chatbot",
+      "featured": true
+    }
+  ]
+}
