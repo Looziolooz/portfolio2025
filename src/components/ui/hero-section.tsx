@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
 import { HERO_CONTENT, COLORS } from '@/data/consts';
+import ScrollArrow from './scroll-arrow';
 
 export default function HeroSection() {
   const fadeInUp = {
@@ -24,19 +24,17 @@ export default function HeroSection() {
     transition: { duration: 0.6, delay: 0.2 }
   };
 
-  const bounceAnimation = {
-    animate: {
-      y: [0, 10, 0],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
+  const scrollToNextSection = () => {
+    // Scroll to the next section after hero
+    const nextSection = document.querySelector('section:not(#hero-section)');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <section 
+      id="hero-section"
       className="min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8"
       style={{ backgroundColor: COLORS.secondary }}
     >
@@ -90,16 +88,12 @@ export default function HeroSection() {
           </div>
 
           {/* Arrow Down */}
-          <motion.div
-            {...bounceAnimation}
-            className="mt-8"
-          >
-            <ChevronDown 
-              size={32} 
-              className="mx-auto"
-              style={{ color: COLORS.primary }}
-            />
-          </motion.div>
+          <ScrollArrow 
+            color={COLORS.primary}
+            size={32}
+            className="mt-8 mx-auto"
+            onClick={scrollToNextSection}
+          />
         </div>
 
         {/* Desktop Layout (>= 1024px) */}
@@ -150,15 +144,12 @@ export default function HeroSection() {
             </motion.p>
 
             {/* Arrow Down - Desktop */}
-            <motion.div
-              {...bounceAnimation}
+            <ScrollArrow 
+              color={COLORS.primary}
+              size={36}
               className="pt-6"
-            >
-              <ChevronDown 
-                size={36} 
-                style={{ color: COLORS.primary }}
-              />
-            </motion.div>
+              onClick={scrollToNextSection}
+            />
           </div>
         </div>
       </div>
