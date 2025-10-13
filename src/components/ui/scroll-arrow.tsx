@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ScrollArrowProps {
   color?: string;
@@ -10,6 +10,7 @@ interface ScrollArrowProps {
   duration?: number;
   distance?: number;
   onClick?: () => void;
+  direction?: 'up' | 'down';
 }
 
 export default function ScrollArrow({ 
@@ -18,11 +19,12 @@ export default function ScrollArrow({
   className = '',
   duration = 2,
   distance = 10,
-  onClick
+  onClick,
+  direction = 'down'
 }: ScrollArrowProps) {
   const bounceAnimation = {
     animate: {
-      y: [0, distance, 0],
+      y: direction === 'down' ? [0, distance, 0] : [0, -distance, 0],
       transition: {
         duration: duration,
         repeat: Infinity,
@@ -31,13 +33,15 @@ export default function ScrollArrow({
     }
   };
 
+  const ArrowIcon = direction === 'down' ? ChevronDown : ChevronUp;
+
   return (
     <motion.div
       {...bounceAnimation}
       className={`cursor-pointer ${className}`}
       onClick={onClick}
     >
-      <ChevronDown 
+      <ArrowIcon 
         size={size} 
         style={{ color }}
       />

@@ -2,36 +2,52 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { MENUITEMS, COLORS } from '@/data/consts';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Detect active section
+      const sections = MENUITEMS.map(item => item.path.substring(1)); // Remove #
+      
+      for (const sectionId of sections) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Check if section is in viewport (top half of screen)
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(`#${sectionId}`);
+            break;
+          }
+        }
+      }
     };
 
+    handleScroll(); // Check on mount
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    // Always handle anchor links
     if (path.startsWith('#')) {
       e.preventDefault();
       const element = document.querySelector(path);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
-        setIsOpen(false);
+        setIsOpen(false); // Close mobile menu after navigation
       }
     }
   };
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav
@@ -44,7 +60,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link 
-            href="/" 
+            href="#hero-section" 
+            onClick={(e) => handleSmoothScroll(e, '#hero-section')}
             className="text-xl md:text-2xl font-heading font-bold transition-colors hover:opacity-80"
             style={{ color: COLORS.primary }}
           >
@@ -52,17 +69,17 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:gap-8">
             {MENUITEMS.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
                 onClick={(e) => handleSmoothScroll(e, item.path)}
                 className={`text-sm lg:text-base font-body font-medium transition-all hover:opacity-80 ${
-                  pathname === item.path ? 'font-bold' : ''
+                  activeSection === item.path ? 'font-bold' : ''
                 }`}
                 style={{ 
-                  color: pathname === item.path ? COLORS.primary : COLORS.dark 
+                  color: activeSection === item.path ? COLORS.primary : COLORS.dark 
                 }}
               >
                 {item.title}
@@ -73,7 +90,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg transition-colors"
+            className="md:hidden p-2 rounded-lg transition-colors hover:bg-gray-100"
             style={{ color: COLORS.primary }}
             aria-label="Toggle menu"
           >
@@ -94,16 +111,13 @@ export default function Navbar() {
             <Link
               key={item.path}
               href={item.path}
-              onClick={(e) => {
-                handleSmoothScroll(e, item.path);
-                setIsOpen(false);
-              }}
+              onClick={(e) => handleSmoothScroll(e, item.path)}
               className={`block px-4 py-3 rounded-lg text-base font-body font-medium transition-all ${
-                pathname === item.path ? 'font-bold' : ''
+                activeSection === item.path ? 'font-bold' : ''
               }`}
               style={{ 
-                color: pathname === item.path ? COLORS.primary : COLORS.dark,
-                backgroundColor: pathname === item.path ? COLORS.secondary : 'transparent'
+                color: activeSection === item.path ? COLORS.primary : COLORS.dark,
+                backgroundColor: activeSection === item.path ? COLORS.secondary : 'transparent'
               }}
             >
               {item.title}
