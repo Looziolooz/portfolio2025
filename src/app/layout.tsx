@@ -31,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="it" className={`${montserrat.variable} ${hind.variable}`}>
       <body className="font-body"
-      cz-shortcut-listen="true"
-      >{children}</body>
+       cz-shortcut-listen="true"
+       >{children}</body>
     </html>
   );
 }

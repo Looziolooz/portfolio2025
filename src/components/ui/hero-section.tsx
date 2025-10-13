@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { HERO_CONTENT, COLORS } from '@/data/consts';
-import ScrollArrow from './scroll-arrow';
+import ScrollArrow from '@/components/ui/scroll-arrow';
 
 export default function HeroSection() {
   const fadeInUp = {
