@@ -8,14 +8,14 @@ export const COLORS = {
   dark: '#2D2D2D',
 } as const;
 
-// Navigation menu items
+// Navigation menu items - Linked to page sections
 export const MENUITEMS = [
-  { title: 'Home', path: '/' },
-  { title: 'Tech', path: '/tech' },
-  { title: 'Featured Projects', path: '/featured-projects'},
-  { title: 'Tech Deep Dive', path: '/tech-deep-dive'},
-  { title: 'Skills', path: '/skills' },
-  { title: 'Let\'s Talk', path: '/lets-talk' },
+  { title: 'Home', path: '#hero-section' },
+  { title: 'Tech', path: '#tech-section' },
+  { title: 'Featured Projects', path: '#projects-section'},
+  { title: 'Tech Deep Dive', path: '#deep-dive-section'},
+  { title: 'Skills', path: '#skills-section' },
+  { title: 'Let\'s Talk', path: '#contact-section' },
 ];
 
 // Hero Section Content
@@ -24,4 +24,14 @@ export const HERO_CONTENT = {
   title: "Frontend Developer",
   description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
   profileImage: "/images/profile.png",
+};
+
+// Tech Section Content
+export const TECH_CONTENT = {
+  title: "Tech",
+  technologies: [
+    "HTML, CSS, Tailwind, JavaScript, TypeScript,",
+    "React, React Hooks, Next, Web Accessibility,",
+    "API:s, GitHub."
+  ]
 };
