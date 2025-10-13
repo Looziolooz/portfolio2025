@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link 
             href="/" 
-            className="text-xl md:text-2xl font-bold transition-colors hover:opacity-80"
+            className="text-xl md:text-2xl font-heading font-bold transition-colors hover:opacity-80"
             style={{ color: COLORS.primary }}
           >
             LD
@@ -58,7 +58,7 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 onClick={(e) => handleSmoothScroll(e, item.path)}
-                className={`text-sm lg:text-base font-medium transition-all hover:opacity-80 ${
+                className={`text-sm lg:text-base font-body font-medium transition-all hover:opacity-80 ${
                   pathname === item.path ? 'font-bold' : ''
                 }`}
                 style={{ 
@@ -98,7 +98,7 @@ export default function Navbar() {
                 handleSmoothScroll(e, item.path);
                 setIsOpen(false);
               }}
-              className={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${
+              className={`block px-4 py-3 rounded-lg text-base font-body font-medium transition-all ${
                 pathname === item.path ? 'font-bold' : ''
               }`}
               style={{ 
