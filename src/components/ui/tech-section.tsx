@@ -36,13 +36,11 @@ export default function TechSection() {
     });
   };
 
-  const scrollToNext = () => {
-    // Find next section after tech-section
-    const techSection = document.getElementById('tech-section');
-    const nextSection = techSection?.nextElementSibling;
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  const scrollToProjects = () => {
+    // Scroll directly to projects section
+    document.getElementById('projects-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   };
 
   return (
@@ -139,7 +137,7 @@ export default function TechSection() {
         color={COLORS.secondary}
         size={32}
         direction="down"
-        onClick={scrollToNext}
+        onClick={scrollToProjects}
         className="mt-8 md:mt-12"
       />
     </section>
