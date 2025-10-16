@@ -1,0 +1,58 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Weather App",
+      "image": "/images/weatherapp-preview.png",
+      "tags": ["HTML5", "CSS3", "JavaScript", "APIs"],
+      "description": "Weather app with 4-day forecast, dynamic background, and city search functionality.",
+      "netlify": "https://weather-se.netlify.app/",
+      "github": "https://github.com/Looziolooz/weatherapp"
+    },
+    {
+      "id": 2,
+      "name": "E-commerce",
+      "image": "/images/lexicon-ecommerce.png",
+      "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS", "APIs"],
+      "description": "E-commerce platform with dynamic routing, admin dashboard, and product filtering.",
+      "netlify": "https://lexicon-ecommerce-group-project.vercel.app/",
+      "github": "https://github.com/Looziolooz/lexicon-ecommerce-group-project"
+    },
+    {
+      "id": 3,
+      "name": "Library",
+      "image": "/images/library-preview.png",
+      "tags": ["HTML5", "CSS3", "JavaScript"],
+      "description": "Book exploration app with advanced search, filters, and responsive layout.",
+      "netlify": "https://loozlibrary.netlify.app/",
+      "github": "https://github.com/Looziolooz/library"
+    },
+    {
+      "id": 4,
+      "name": "Planet Chatbot",
+      "image": "/images/planetchatbot-preview.png",
+      "tags": ["HTML5", "CSS3", "JavaScript"],
+      "description": "Travel agency chatbot with simple interface and basic interactions.",
+      "netlify": null,
+      "github": "https://github.com/Looziolooz/planetchatbot"
+    },
+    {
+      "id": 5,
+      "name": "Counter Passenger",
+      "image": "/images/counterpassenger-preview.png",
+      "tags": ["HTML5", "CSS3", "JavaScript"],
+      "description": "Passenger counter with history saving and futuristic design.",
+      "netlify": "https://traincounterpassenger.netlify.app/",
+      "github": "https://github.com/Looziolooz/counterpassenger"
+    },
+    {
+      "id": 6,
+      "name": "Basketball Scoreboard",
+      "image": "/images/basketballscoreboard-preview.png",
+      "tags": ["HTML5", "CSS3", "JavaScript"],
+      "description": "Basketball scoreboard with keyboard shortcuts for quick score updates.",
+      "netlify": "https://basketball-scoreboard-looz.netlify.app/",
+      "github": "https://github.com/Looziolooz/basketballscoreboard"
+    }
+  ]
+}

@@ -10,7 +10,6 @@ export const COLORS = {
 
 // Navigation menu items - Linked to page sections
 export const MENUITEMS = [
-  { title: 'Home', path: '#hero-section' },
   { title: 'Tech', path: '#tech-section' },
   { title: 'Featured Projects', path: '#projects-section'},
   { title: 'Tech Deep Dive', path: '#deep-dive-section'},
