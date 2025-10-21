@@ -4,6 +4,7 @@ import TechSection from '@/components/ui/tech-section';
 import ProjectsSection from '@/components/ui/projects-section';
 import BlogSection from '@/components/blog/blog-section';
 import { getAllPosts } from '@/lib/blog';
+import SkillsSection from '@/components/ui/skills-section';
 
 export default function Home() {
   const posts = getAllPosts();
@@ -15,6 +16,7 @@ export default function Home() {
       <TechSection />
       <ProjectsSection />
       <BlogSection posts={posts} />
+      <SkillsSection />
     </main>
   );
 }

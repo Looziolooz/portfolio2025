@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/blog';
 import BlogGrid from '@/components/blog/blog-grid';
 import BlogPagination from '@/components/blog/blog-pagination';
-import BlogNavigationArrows from '@/components/blog/blog-navigation-arrows';
 
 export const metadata: Metadata = {
   title: 'Tech Deep Dive - Blog',
@@ -19,12 +18,10 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
   const currentPage = Number(searchParams?.page) || 1;
   const postsPerPage = 6;
   
-  // Ottieni tutti i post
   const allPosts = getAllPosts();
   const totalPosts = allPosts.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);
   
-  // Calcola quali post mostrare
   const startIndex = (currentPage - 1) * postsPerPage;
   const endIndex = startIndex + postsPerPage;
   const currentPosts = allPosts.slice(startIndex, endIndex);
@@ -83,13 +80,6 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
             </div>
           </div>
         )}
-        
-        {/* Navigation Arrows - con navigazione personalizzata */}
-        <BlogNavigationArrows 
-          prevSectionId="top"  // o l'ID della sezione precedente
-          nextSectionId="footer"  // o l'ID della sezione successiva
-          color="#D97D55"
-        />
       </div>
     </main>
   );
