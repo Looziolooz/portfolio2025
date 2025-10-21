@@ -120,7 +120,6 @@ export default function ProjectsSection() {
         )}
       </div>
 
-      {/* Arrows Navigation - Inline at bottom */}
       <div className="flex items-center gap-4 mt-12 md:mt-16">
         <ScrollArrow 
           color={COLORS.teal}

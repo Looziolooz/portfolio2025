@@ -65,7 +65,7 @@ export default function Navbar() {
             className="text-xl md:text-2xl font-heading font-bold transition-colors hover:opacity-80"
             style={{ color: COLORS.primary }}
           >
-            LD
+            Lorenzo Dastoli
           </Link>
 
           {/* Desktop Menu */}

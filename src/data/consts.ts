@@ -12,7 +12,7 @@ export const COLORS = {
 export const MENUITEMS = [
   { title: 'Tech', path: '#tech-section' },
   { title: 'Featured Projects', path: '#projects-section'},
-  { title: 'Tech Deep Dive', path: '#deep-dive-section'},
+  { title: 'Tech Deep Dive', path: '#blog-section' },
   { title: 'Skills', path: '#skills-section' },
   { title: 'Let\'s Talk', path: '#contact-section' },
 ];
