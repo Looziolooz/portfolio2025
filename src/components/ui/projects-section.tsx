@@ -70,14 +70,6 @@ export default function ProjectsSection() {
       className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
       style={{ backgroundColor: COLORS.white }}
     >
-      {/* Arrow Up */}
-      <ScrollArrow 
-        color={COLORS.teal}
-        size={32}
-        direction="up"
-        onClick={scrollToTech}
-        className="mb-8 md:mb-12"
-      />
 
       <div className="max-w-7xl w-full">
         {/* Title */}

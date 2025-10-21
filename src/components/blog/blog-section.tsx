@@ -20,17 +20,20 @@ interface BlogSectionProps {
 }
 
 export default function BlogSection({ posts }: BlogSectionProps) {
-  const handleScrollToNext = () => {
-    const nextSection = document.querySelector('#next-section');
-    nextSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProjects = () => {
+    document.getElementById('projects-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   };
 
-  const handleScrollToPrevious = () => {
-    const previousSection = document.querySelector('#projects');
-    previousSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSkills = () => {
+    const skillsSection = document.getElementById('skills-section');
+    const nextSection = skillsSection?.nextElementSibling;
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
-  // Prendi solo i primi 4 post per la home page
   const displayPosts = posts.slice(0, 4);
 
   return (
@@ -92,14 +95,14 @@ export default function BlogSection({ posts }: BlogSectionProps) {
             color="#14b8a6"  // Teal color come nel tuo esempio
             size={32}
             direction="up"
-            onClick={handleScrollToPrevious}
+            onClick={scrollToProjects}
             className="hover:scale-110 transition-transform"
           />
           <ScrollArrow 
             color="#14b8a6"  // Teal color come nel tuo esempio
             size={32}
             direction="down"
-            onClick={handleScrollToNext}
+            onClick={scrollToSkills}
             className="hover:scale-110 transition-transform"
           />
         </div>
