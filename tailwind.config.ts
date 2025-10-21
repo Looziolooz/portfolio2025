@@ -10,7 +10,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Custom color palette from your design
         primary: {
           DEFAULT: "#D97757",
           light: "#E89578",
