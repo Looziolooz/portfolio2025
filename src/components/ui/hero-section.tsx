@@ -53,9 +53,9 @@ export default function HeroSection() {
               fill
               sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
               className="object-cover"
-              style={{ objectPosition: 'center center' }}
+              style={{ objectPosition: 'center center'}}
               priority
-            />
+              />
           </motion.div>
 
           {/* Text Content */}

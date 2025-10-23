@@ -6,6 +6,7 @@ export const COLORS = {
   teal: '#6FA4AF',
   white: '#FFFFFF',
   dark: '#2D2D2D',
+  gray: '#6B7280',
 } as const;
 
 // Navigation menu items - Linked to page sections
