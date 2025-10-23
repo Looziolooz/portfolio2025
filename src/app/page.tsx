@@ -5,6 +5,7 @@ import ProjectsSection from '@/components/ui/projects-section';
 import BlogSection from '@/components/blog/blog-section';
 import { getAllPosts } from '@/lib/blog';
 import SkillsSection from '@/components/ui/skills-section';
+import ContactSection from '@/components/ui/contact-section';
 
 export default function Home() {
   const posts = getAllPosts();
@@ -17,6 +18,7 @@ export default function Home() {
       <ProjectsSection />
       <BlogSection posts={posts} />
       <SkillsSection />
+      <ContactSection />
     </main>
   );
 }
