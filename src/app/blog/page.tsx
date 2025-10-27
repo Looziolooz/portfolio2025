@@ -10,7 +10,7 @@ import BlogSkeleton from '@/components/blog/blog-skeleton';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Tech Deep Dive - Blog',
+    title: 'Dev in Progress - Blog',
     description: 'Explore my thoughts on coding, creativity, and building amazing digital experiences',
     metadataBase: new URL(process.env.NODE_ENV === 'production' 
       ? 'https://tuosito.com'
@@ -43,7 +43,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#D97D55] mb-4">
-            Tech Deep Dive
+            Dev in Progress
           </h1>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto">
             Explore my thoughts on coding, creativity, and building amazing digital experiences

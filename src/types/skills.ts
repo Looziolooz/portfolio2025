@@ -64,19 +64,19 @@ export const skillsData: SkillsData = {
   largeDesktop: [
     {
       title: 'Code',
-      items: ['HTML5', 'CSS3', 'Javascript ES6', 'React', 'Styled Components', 'GitHub']
+      items: ['HTML5', 'CSS3', 'Javascript ES6', 'React', 'Next.js', 'TypeScript']
     },
     {
       title: 'Toolbox',
-      items: ['Atom', 'Postman', 'Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Keynote', 'Slack']
+      items: ['Postman', 'Adobe Photoshop', 'Adobe Illustrator', 'Figma', 'Slack', 'GitHub']
     },
     {
       title: 'Upcoming',
-      items: ['Node.js', 'None', 'Design Lead', 'Branding', 'Strategy', 'Process design', 'Concept development', 'Agile methodology', 'Hyper Island toolbox']
+      items: ['WooCommerce', 'Shopify', 'Wordpress', 'Agile methodology']
     },
     {
       title: 'More',
-      items: ['Design Lead', 'Branding', 'Strategy', 'Process design', 'Concept development', 'Agile methodology', 'Hyper Island toolbox']
+      items: ['Branding', 'Strategy', 'Process design', 'Concept development',]
     }
   ]
 };

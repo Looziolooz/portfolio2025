@@ -46,7 +46,7 @@ export default function BlogSection({ posts }: BlogSectionProps) {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#D97D55] mb-4">
-            Tech Deep Dive
+            Dev in Progress
           </h2>
           <p className="text-gray-700 text-lg max-w-2xl mx-auto">
             Explore my thoughts on coding, creativity, and building amazing digital experiences

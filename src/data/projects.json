@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Trädgård Passion",
-      "image": "/images/tragard-preview.png",
+      "image": "/images/tragard-preview.webp",
       "tags": ["HTML5", "CSS3", "Responsive Design"],
       "description": "Trädgård Passion is a personal website that promotes the joy and benefits of year-round gardening.",
       "netlify": "https://tragardhobby.netlify.app/",
@@ -39,7 +39,7 @@
     {
       "id": 5,
       "name": "E-commerce",
-      "image": "/images/lexicon-ecommerce.png",
+      "image": "/images/ecommerce.png",
       "tags": ["Next.js", "TypeScript", "Tailwind CSS", "APIs"],
       "description": "An e-commerce platform with dynamic routing, admin dashboard, and product filtering.",
       "netlify": "https://lexicon-ecommerce-group-project.vercel.app/",
@@ -66,7 +66,7 @@
     {
       "id": 8,
       "name": "Counter Passenger",
-      "image": "/images/counterpassenger-preview.png",
+      "image": "/images/counterpassenger-preview.webp",
       "tags": ["HTML5", "CSS3", "JavaScript"],
       "description": "A futuristic passenger counter app that saves history and offers a sleek interface. Useful for tracking and managing passenger flow.",
       "netlify": "https://traincounterpassenger.netlify.app/",
@@ -75,7 +75,7 @@
     {
       "id": 9,
       "name": "Basketball Scoreboard",
-      "image": "/images/basketballscoreboard-preview.png",
+      "image": "/images/basketballscoreboard-preview.webp",
       "tags": ["HTML5", "CSS3", "JavaScript"],
       "description": "A basketball scoreboard app with keyboard shortcuts for fast score updates.",
       "netlify": "https://basketball-scoreboard-looz.netlify.app/",
@@ -84,7 +84,7 @@
     {
       "id": 10,
       "name": "Weather App",
-      "image": "/images/weatherapp-preview.png",
+      "image": "/images/weatherapp-preview.webp",
       "tags": ["HTML5", "CSS3", "JavaScript", "APIs"],
       "description": "A weather app with a 4-day forecast, dynamic background, and city search functionality.",
       "netlify": "https://weather-se.netlify.app/",

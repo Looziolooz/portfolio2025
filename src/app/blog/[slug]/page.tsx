@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     }
 
     return {
-      title: `${post.title} - Tech Deep Dive`,
+      title: `${post.title} - Dev in Progress`,
       description: post.excerpt,
       metadataBase: new URL(process.env.NODE_ENV === 'production' 
         ? 'https://tuosito.com'
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   } catch (error) {
     console.error('Error generating metadata:', error);
     return {
-      title: 'Blog Post - Tech Deep Dive',
+      title: 'Blog Post - Dev in Progress',
       metadataBase: new URL(process.env.NODE_ENV === 'production' 
         ? 'https://tuosito.com'
         : 'http://localhost:3000'
