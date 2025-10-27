@@ -20,13 +20,13 @@ interface BlogSectionProps {
 }
 
 export default function BlogSection({ posts }: BlogSectionProps) {
-  const scrollToProjects = () => {
+  const scrollToThePrevious = () => {
     document.getElementById('projects-section')?.scrollIntoView({ 
       behavior: 'smooth' 
     });
   };
 
-  const scrollToSkills = () => {
+  const scrollToTheNext = () => {
     const skillsSection = document.getElementById('skills-section');
     const nextSection = skillsSection?.nextElementSibling;
     if (nextSection) {
@@ -37,7 +37,7 @@ export default function BlogSection({ posts }: BlogSectionProps) {
   const displayPosts = posts.slice(0, 4);
 
   return (
-    <section id="blog" className="min-h-screen bg-[#F5E6D3] py-20 px-4 md:px-8 lg:px-16">
+    <section id="blog-section" className="min-h-screen bg-[#F5E6D3] py-20 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -92,17 +92,17 @@ export default function BlogSection({ posts }: BlogSectionProps) {
 
         <div className="flex items-center justify-center gap-4 mt-12 md:mt-16">
           <ScrollArrow 
-            color="#14b8a6"  // Teal color come nel tuo esempio
-            size={32}
+            color="#D97D55"  
+            size={40}
             direction="up"
-            onClick={scrollToProjects}
+            onClick={scrollToThePrevious}
             className="hover:scale-110 transition-transform"
           />
           <ScrollArrow 
-            color="#14b8a6"  // Teal color come nel tuo esempio
-            size={32}
+            color="#D97D55"  
+            size={40}
             direction="down"
-            onClick={scrollToSkills}
+            onClick={scrollToTheNext}
             className="hover:scale-110 transition-transform"
           />
         </div>

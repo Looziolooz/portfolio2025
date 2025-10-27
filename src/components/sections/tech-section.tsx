@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { TECH_CONTENT, COLORS } from '@/data/consts';
-import ScrollArrow from './scroll-arrow';
+import ScrollArrow from '@/components/ui/scroll-arrow';
 
 export default function TechSection() {
   const fadeInLeft = {
@@ -30,14 +30,13 @@ export default function TechSection() {
     animate: { opacity: 1, y: 0 }
   };
 
-  const scrollToHero = () => {
+  const scrollToThePrevious = () => {
     document.getElementById('hero-section')?.scrollIntoView({ 
       behavior: 'smooth' 
     });
   };
 
-  const scrollToProjects = () => {
-    // Scroll directly to projects section
+  const scrollToTheNext = () => {
     document.getElementById('projects-section')?.scrollIntoView({ 
       behavior: 'smooth' 
     });
@@ -49,14 +48,6 @@ export default function TechSection() {
       className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
       style={{ backgroundColor: COLORS.primary }}
     >
-      {/* Arrow Up - Top */}
-      <ScrollArrow 
-        color={COLORS.secondary}
-        size={32}
-        direction="up"
-        onClick={scrollToHero}
-        className="mb-8 md:mb-12"
-      />
 
       <div className="max-w-7xl w-full">
         {/* Mobile & Tablet Layout (< 1024px) */}
@@ -132,14 +123,20 @@ export default function TechSection() {
         </motion.div>
       </div>
 
-      {/* Arrow Down - Bottom */}
-      <ScrollArrow 
-        color={COLORS.secondary}
-        size={32}
-        direction="down"
-        onClick={scrollToProjects}
-        className="mt-8 md:mt-12"
-      />
+      <div className="flex items-center gap-4 mt-12 md:mt-16">
+        <ScrollArrow 
+          color={COLORS.white}
+          size={40}
+          direction="up"
+          onClick={scrollToThePrevious}
+        />
+        <ScrollArrow 
+          color={COLORS.white}
+          size={40}
+          direction="down"
+          onClick={scrollToTheNext}
+        />
+      </div>
     </section>
   );
 }

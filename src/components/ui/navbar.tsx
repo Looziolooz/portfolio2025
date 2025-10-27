@@ -14,37 +14,64 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Detect active section
-      const sections = MENUITEMS.map(item => item.path.substring(1)); // Remove #
+      // Get all section IDs from menu items
+      const sectionIds = MENUITEMS.map(item => item.path.substring(1));
       
-      for (const sectionId of sections) {
+      // Add hero section since it's not in MENUITEMS but is linked from logo
+      const allSections = ['hero-section', ...sectionIds];
+      
+      let currentSection = '';
+
+      for (const sectionId of allSections) {
         const section = document.getElementById(sectionId);
         if (section) {
           const rect = section.getBoundingClientRect();
-          // Check if section is in viewport (top half of screen)
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(`#${sectionId}`);
+          const sectionTop = rect.top;
+          const sectionBottom = rect.bottom;
+          const windowHeight = window.innerHeight;
+          
+          // Check if section is in viewport (more precise calculation)
+          if (sectionTop <= windowHeight / 2 && sectionBottom >= windowHeight / 3) {
+            currentSection = `#${sectionId}`;
             break;
           }
         }
       }
+
+      setActiveSection(currentSection);
     };
 
-    handleScroll(); // Check on mount
-    window.addEventListener('scroll', handleScroll);
+    // Initial check and add event listener
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    // Always handle anchor links
     if (path.startsWith('#')) {
       e.preventDefault();
-      const element = document.querySelector(path);
+      const targetId = path.substring(1);
+      const element = document.getElementById(targetId);
+      
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        // Calculate offset for fixed navbar
+        const navbarHeight = 80; // approx height of navbar
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Update URL without page reload
+        window.history.pushState(null, '', path);
+        
         setIsOpen(false); // Close mobile menu after navigation
       }
     }
+    // External links will behave normally
   };
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -58,12 +85,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo - Links to Hero Section */}
           <Link 
             href="#hero-section" 
             onClick={(e) => handleSmoothScroll(e, '#hero-section')}
-            className="text-xl md:text-2xl font-heading font-bold transition-colors hover:opacity-80"
+            className="text-xl md:text-2xl font-heading font-bold transition-colors hover:opacity-80 flex-shrink-0"
             style={{ color: COLORS.primary }}
+            aria-label="Home - Lorenzo Dastoli"
           >
             Lorenzo Dastoli
           </Link>
@@ -75,12 +103,16 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 onClick={(e) => handleSmoothScroll(e, item.path)}
-                className={`text-sm lg:text-base font-body font-medium transition-all hover:opacity-80 ${
-                  activeSection === item.path ? 'font-bold' : ''
+                className={`text-sm lg:text-base font-body font-medium transition-all duration-200 px-3 py-2 rounded-lg ${
+                  activeSection === item.path 
+                    ? 'font-bold' 
+                    : 'hover:opacity-80'
                 }`}
                 style={{ 
-                  color: activeSection === item.path ? COLORS.primary : COLORS.dark 
+                  color: activeSection === item.path ? COLORS.primary : COLORS.dark,
+                  backgroundColor: activeSection === item.path ? `${COLORS.secondary}40` : 'transparent'
                 }}
+                aria-current={activeSection === item.path ? 'page' : undefined}
               >
                 {item.title}
               </Link>
@@ -90,9 +122,10 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden p-2 rounded-lg transition-colors hover:bg-gray-100"
+            className="md:hidden p-2 rounded-lg transition-colors hover:bg-gray-100 flex-shrink-0"
             style={{ color: COLORS.primary }}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -106,7 +139,7 @@ export default function Navbar() {
         }`}
         style={{ backgroundColor: COLORS.white }}
       >
-        <div className="px-4 pt-2 pb-6 space-y-3 shadow-lg">
+        <div className="px-4 pt-2 pb-6 space-y-2 shadow-lg">
           {MENUITEMS.map((item) => (
             <Link
               key={item.path}
@@ -119,6 +152,7 @@ export default function Navbar() {
                 color: activeSection === item.path ? COLORS.primary : COLORS.dark,
                 backgroundColor: activeSection === item.path ? COLORS.secondary : 'transparent'
               }}
+              aria-current={activeSection === item.path ? 'page' : undefined}
             >
               {item.title}
             </Link>

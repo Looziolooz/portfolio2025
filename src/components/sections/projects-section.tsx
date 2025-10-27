@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { COLORS } from '@/data/consts';
 import { Project } from '@/types/project';
-import ProjectCard from './project-card';
-import ScrollArrow from './scroll-arrow';
+import ProjectCard from '@/components/ui/project-card';
+import ScrollArrow from '@/components/ui/scroll-arrow';
 
 // Import projects data directly
 import projectsData from '@/data/projects.json';
@@ -34,13 +34,13 @@ export default function ProjectsSection() {
     }
   };
 
-  const scrollToTech = () => {
+  const scrollToThePrevious = () => {
     document.getElementById('tech-section')?.scrollIntoView({ 
       behavior: 'smooth' 
     });
   };
 
-  const scrollToNext = () => {
+  const scrollToTheNext = () => {
     const projectsSection = document.getElementById('projects-section');
     const nextSection = projectsSection?.nextElementSibling;
     if (nextSection) {
@@ -115,15 +115,15 @@ export default function ProjectsSection() {
       <div className="flex items-center gap-4 mt-12 md:mt-16">
         <ScrollArrow 
           color={COLORS.teal}
-          size={32}
+          size={40}
           direction="up"
-          onClick={scrollToTech}
+          onClick={scrollToThePrevious}
         />
         <ScrollArrow 
           color={COLORS.teal}
-          size={32}
+          size={40}
           direction="down"
-          onClick={scrollToNext}
+          onClick={scrollToTheNext}
         />
       </div>
     </section>

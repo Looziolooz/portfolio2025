@@ -1,11 +1,11 @@
 import Navbar from '@/components/ui/navbar';
-import HeroSection from '@/components/ui/hero-section';
-import TechSection from '@/components/ui/tech-section';
-import ProjectsSection from '@/components/ui/projects-section';
+import HeroSection from '@/components/sections/hero-section';
+import TechSection from '@/components/sections/tech-section';
+import ProjectsSection from '@/components/sections/projects-section';
 import BlogSection from '@/components/blog/blog-section';
 import { getAllPosts } from '@/lib/blog';
-import SkillsSection from '@/components/ui/skills-section';
-import ContactSection from '@/components/ui/contact-section';
+import SkillsSection from '@/components/sections/skills-section';
+import ContactSection from '@/components/sections/contact-section';
 
 export default function Home() {
   const posts = getAllPosts();

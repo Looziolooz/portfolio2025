@@ -25,7 +25,6 @@ export default function HeroSection() {
   };
 
   const scrollToNextSection = () => {
-    // Scroll to the next section after hero
     const nextSection = document.querySelector('section:not(#hero-section)');
     if (nextSection) {
       nextSection.scrollIntoView({ behavior: 'smooth' });
@@ -146,7 +145,7 @@ export default function HeroSection() {
             {/* Arrow Down - Desktop */}
             <ScrollArrow 
               color={COLORS.primary}
-              size={36}
+              size={40}
               className="pt-6"
               onClick={scrollToNextSection}
             />

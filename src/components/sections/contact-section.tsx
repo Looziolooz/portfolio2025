@@ -36,7 +36,7 @@ export default function ContactSection() {
 
   return (
     <section 
-      id="contact" 
+      id="contact-section" 
       className="min-h-screen flex items-center justify-center bg-white py-20 px-4"
     >
       <motion.div
@@ -52,7 +52,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#5EADB3] mb-20"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#6FA4AF] mb-20"
           style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
         >
           Let&apos;s talk
@@ -86,7 +86,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-3xl md:text-4xl font-medium text-[#5EADB3] mb-8"
+          className="text-3xl md:text-4xl font-medium text-[#6FA4AF] mb-8"
         >
           Lorenzo Dastoli
         </motion.h3>
@@ -102,7 +102,7 @@ export default function ContactSection() {
           {/* Phone */}
           <Link 
             href="tel:+460763123345"
-            className="block text-xl md:text-2xl text-[#5EADB3] hover:text-[#4A8B91] transition-colors duration-300"
+            className="block text-xl md:text-2xl text-[#6FA4AF] hover:text-[#4A8B91] transition-colors duration-300"
           >
             +46(0)763 12 33 45
           </Link>
@@ -110,7 +110,7 @@ export default function ContactSection() {
           {/* Email */}
           <Link 
             href="mailto:lorenzo.dastoli@mail.com"
-            className="block text-xl md:text-2xl text-[#5EADB3] hover:text-[#4A8B91] transition-colors duration-300"
+            className="block text-xl md:text-2xl text-[#6FA4AF] hover:text-[#4A8B91] transition-colors duration-300"
           >
             lorenzo.dastoli@mail.com
           </Link>

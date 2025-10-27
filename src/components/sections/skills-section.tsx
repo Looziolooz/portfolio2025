@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import ScrollArrow from './scroll-arrow';
+import ScrollArrow from '@/components/ui/scroll-arrow';
 import { COLORS } from '@/data/consts';
 import { skillsData } from '@/types/skills';
-import SkillsGrid from './SkillsGrid';
+import SkillsGrid from '@/components/ui/skills-grid';
 
 
 export default function SkillsSection() {

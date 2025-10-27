@@ -1,34 +1,17 @@
-import type { NextConfig } from 'next'
-import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-import rehypePrettyCode from 'rehype-pretty-code'
-
-const nextConfig: NextConfig = {
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    domains: ['localhost'],
-    remotePatterns: [
-      {
-        protocol: 'https' as const,
-        hostname: '**',
-      },
-    ],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048], // Dimensioni consistenti
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    minimumCacheTTL: 60, // Cache più lunga
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion']
   },
 }
 
-const withMDX = createMDX({
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      [
-        rehypePrettyCode,
-        {
-          theme: 'one-dark-pro',
-          keepBackground: false,
-        },
-      ],
-    ],
-  },
-})
-
-export default withMDX(nextConfig)
+module.exports = nextConfig

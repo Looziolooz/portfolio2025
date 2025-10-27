@@ -16,7 +16,7 @@ export const MENUITEMS = [
   { title: 'Tech Deep Dive', path: '#blog-section' },
   { title: 'Skills', path: '#skills-section' },
   { title: 'Let\'s Talk', path: '#contact-section' },
-];
+] as const;
 
 // Hero Section Content
 export const HERO_CONTENT = {
