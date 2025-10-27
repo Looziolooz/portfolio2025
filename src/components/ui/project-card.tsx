@@ -71,7 +71,7 @@ export default function ProjectCard({
               <span
                 key={idx}
                 className="px-3 py-1 text-xs font-body font-medium text-white rounded"
-                style={{ backgroundColor: COLORS.dark }}
+                style={{ backgroundColor: COLORS.teal }}
               >
                 {tech}
               </span>
@@ -92,7 +92,7 @@ export default function ProjectCard({
                 }}
               >
                 <Globe size={18} />
-                Live demo
+                website
               </a>
             )}
             <a
@@ -106,7 +106,7 @@ export default function ProjectCard({
               }}
             >
               <Github size={18} />
-              View the code
+              Github
             </a>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function ProjectCard({
                 <span
                   key={idx}
                   className="px-3 py-1 text-xs font-body font-medium text-white rounded"
-                  style={{ backgroundColor: COLORS.dark }}
+                  style={{ backgroundColor: COLORS.teal }}
                 >
                   {tech}
                 </span>
@@ -166,8 +166,8 @@ export default function ProjectCard({
                   color: COLORS.dark 
                 }}
               >
-                <Globe size={18} />
-                Live demo
+                <Globe size={20} />
+                website
               </a>
             )}
             <a
@@ -180,8 +180,8 @@ export default function ProjectCard({
                 color: COLORS.white 
               }}
             >
-              <Github size={18} />
-              View the code
+              <Github size={20} />
+              Github
             </a>
           </div>
         </div>

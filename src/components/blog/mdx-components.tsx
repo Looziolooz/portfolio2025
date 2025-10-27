@@ -1,3 +1,4 @@
+// components/blog/mdx-components.tsx - SOSTITUISCI con questo
 'use client';
 
 import { motion } from 'framer-motion';
@@ -11,12 +12,13 @@ interface HeadingProps {
 }
 
 export const mdxComponents = {
+  // Headings con animazioni
   h1: ({ children, id }: HeadingProps) => (
     <motion.h1
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       id={id}
-      className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 mt-8"
+      className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 mt-10"
     >
       {children}
     </motion.h1>
@@ -34,21 +36,26 @@ export const mdxComponents = {
     </h3>
   ),
   
+  // Text elements con spacing migliorato
   p: ({ children }: { children: ReactNode }) => (
     <p className="text-gray-700 leading-relaxed mb-6 text-lg">
       {children}
     </p>
   ),
   
-  a: ({ href, children }: { href?: string; children: ReactNode }) => (
-    <Link
-      href={href || '#'}
-      className="text-[#D97D55] hover:text-[#B85C3C] underline underline-offset-4 transition-colors"
-    >
+  strong: ({ children }: { children: ReactNode }) => (
+    <strong className="font-semibold text-gray-900">
       {children}
-    </Link>
+    </strong>
   ),
   
+  em: ({ children }: { children: ReactNode }) => (
+    <em className="italic text-gray-700">
+      {children}
+    </em>
+  ),
+  
+  // Lists
   ul: ({ children }: { children: ReactNode }) => (
     <ul className="list-disc list-inside mb-6 space-y-2 text-gray-700">
       {children}
@@ -67,12 +74,14 @@ export const mdxComponents = {
     </li>
   ),
   
+  // Blockquote
   blockquote: ({ children }: { children: ReactNode }) => (
     <blockquote className="border-l-4 border-[#D97D55] pl-6 py-2 my-6 italic text-gray-600 bg-gray-50 rounded-r-lg">
       {children}
     </blockquote>
   ),
   
+  // Code blocks
   code: ({ children }: { children: ReactNode }) => (
     <code className="bg-gray-100 text-[#D97D55] px-2 py-1 rounded text-sm font-mono">
       {children}
@@ -85,6 +94,17 @@ export const mdxComponents = {
     </pre>
   ),
   
+  // Links
+  a: ({ href, children }: { href?: string; children: ReactNode }) => (
+    <Link
+      href={href || '#'}
+      className="text-[#D97D55] hover:text-[#B85C3C] underline underline-offset-4 transition-colors"
+    >
+      {children}
+    </Link>
+  ),
+  
+  // Images con animazioni
   img: ({ src, alt }: { src?: string; alt?: string }) => (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -100,10 +120,12 @@ export const mdxComponents = {
     </motion.div>
   ),
   
+  // Horizontal rule
   hr: () => (
     <hr className="border-gray-200 my-8" />
   ),
   
+  // Tables
   table: ({ children }: { children: ReactNode }) => (
     <div className="overflow-x-auto mb-6">
       <table className="min-w-full divide-y divide-gray-200">

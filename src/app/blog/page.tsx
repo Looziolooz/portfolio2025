@@ -1,24 +1,36 @@
+// app/blog/page.tsx - USA getAllPosts invece di getOptimizedAllPosts
 import { Metadata } from 'next';
-import { getAllPosts } from '@/lib/blog';
+import { getAllPosts } from '@/lib/blog'; // CAMBIA QUI
 import BlogGrid from '@/components/blog/blog-grid';
 import BlogPagination from '@/components/blog/blog-pagination';
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import BlogSkeleton from '@/components/blog/blog-skeleton';
 
-export const metadata: Metadata = {
-  title: 'Tech Deep Dive - Blog',
-  description: 'Explore my thoughts on coding, creativity, and building amazing digital experiences',
-};
-
-interface BlogPageProps {
-  searchParams?: {
-    page?: string;
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: 'Tech Deep Dive - Blog',
+    description: 'Explore my thoughts on coding, creativity, and building amazing digital experiences',
+    metadataBase: new URL(process.env.NODE_ENV === 'production' 
+      ? 'https://tuosito.com'
+      : 'http://localhost:3000'
+    ),
   };
 }
 
-export default function BlogPage({ searchParams }: BlogPageProps) {
-  const currentPage = Number(searchParams?.page) || 1;
+interface BlogPageProps {
+  searchParams: Promise<{
+    page?: string;
+  }>;
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const resolvedSearchParams = await searchParams;
+  const currentPage = Number(resolvedSearchParams?.page) || 1;
   const postsPerPage = 6;
   
-  const allPosts = getAllPosts();
+  const allPosts = getAllPosts(); // USA getAllPosts direttamente
   const totalPosts = allPosts.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);
   
@@ -41,11 +53,20 @@ export default function BlogPage({ searchParams }: BlogPageProps) {
               {totalPosts} article{totalPosts !== 1 ? 's' : ''} available
             </p>
           )}
+          <Link
+            href="/"
+            className="inline-flex items-center py-2 gap-2 text-[#D97D55] hover:text-[#B85C3C] mb-8 transition-colors group"
+          >
+            <ArrowLeft className="group-hover:-translate-x-1 transition-transform" size={25} />
+            Back to CV
+          </Link>
         </div>
 
         {currentPosts.length > 0 ? (
           <>
-            <BlogGrid posts={currentPosts} />
+            <Suspense fallback={<BlogSkeleton />}>
+              <BlogGrid posts={currentPosts} />
+            </Suspense>
             
             {totalPages > 1 && (
               <BlogPagination

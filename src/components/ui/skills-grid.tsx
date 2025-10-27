@@ -1,7 +1,7 @@
 'use client';
 
 import { SkillCategory } from '@/types/skills';
-import SkillCategoryItem from './SkillCategoryItem';
+import SkillCategoryItem from './skills-category';
 
 interface SkillsGridProps {
   mobile: SkillCategory[];

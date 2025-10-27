@@ -1,3 +1,4 @@
+// components/blog/blog-grid.tsx
 'use client';
 
 import BlogCard from './blog-card';

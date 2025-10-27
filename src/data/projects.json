@@ -2,57 +2,93 @@
   "projects": [
     {
       "id": 1,
-      "name": "Weather App",
-      "image": "/images/weatherapp-preview.png",
-      "tags": ["HTML5", "CSS3", "JavaScript", "APIs"],
-      "description": "Weather app with 4-day forecast, dynamic background, and city search functionality.",
-      "netlify": "https://weather-se.netlify.app/",
-      "github": "https://github.com/Looziolooz/weatherapp"
+      "name": "Trädgård Passion",
+      "image": "/images/tragard-preview.png",
+      "tags": ["HTML5", "CSS3", "Responsive Design"],
+      "description": "Trädgård Passion is a personal website that promotes the joy and benefits of year-round gardening.",
+      "netlify": "https://tragardhobby.netlify.app/",
+      "github": "https://github.com/Looziolooz/Tradgardshobby"
     },
     {
       "id": 2,
+      "name": "Planned Planthood CSS",
+      "image": "/images/plannedplanthood-preview.png",
+      "tags": ["HTML5", "CSS3", "Responsive Design"],
+      "description": "A responsive gardening planner designed for organizing plant care tasks.",
+      "netlify": "https://plannedplanthoodcss.netlify.app/",
+      "github": "https://github.com/Looziolooz/plannedplanthoodcss"
+    },
+    {
+      "id": 3,
+      "name": "Pokedex",
+      "image": "/images/pokedex2-preview.png",
+      "tags": ["Tailwind CSS", "HTML5", "CSS3"],
+      "description": "A modern Pokédex interface built with Tailwind CSS. It displays Pokémon data in a responsive and visually engaging format.",
+      "netlify": "https://loozio-pokedex.netlify.app/",
+      "github": "https://github.com/Looziolooz/pokedex2"
+    },
+        {
+      "id": 4,
+      "name": "Pizzeria",
+      "image": "/images/pizzeria-preview.png",
+      "tags": ["HTML5", "CSS3", "JavaScript"],
+      "description": "An interactive web app for ordering from a virtual pizzeria. Multi-menu options, age-based pricing, and a responsive design.",
+      "netlify": "https://lorenzospizzaria.netlify.app/",
+      "github": "https://github.com/Looziolooz/pizzeria"
+    },
+    {
+      "id": 5,
       "name": "E-commerce",
       "image": "/images/lexicon-ecommerce.png",
-      "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS", "APIs"],
-      "description": "E-commerce platform with dynamic routing, admin dashboard, and product filtering.",
+      "tags": ["Next.js", "TypeScript", "Tailwind CSS", "APIs"],
+      "description": "An e-commerce platform with dynamic routing, admin dashboard, and product filtering.",
       "netlify": "https://lexicon-ecommerce-group-project.vercel.app/",
       "github": "https://github.com/Looziolooz/lexicon-ecommerce-group-project"
     },
     {
-      "id": 3,
+      "id": 6,
       "name": "Library",
       "image": "/images/library-preview.png",
       "tags": ["HTML5", "CSS3", "JavaScript"],
-      "description": "Book exploration app with advanced search, filters, and responsive layout.",
+      "description": "A book exploration app featuring advanced search, category filters, and a responsive layout. Ideal for browsing and discovering new reads.",
       "netlify": "https://loozlibrary.netlify.app/",
       "github": "https://github.com/Looziolooz/library"
     },
     {
-      "id": 4,
+      "id": 7,
       "name": "Planet Chatbot",
       "image": "/images/planetchatbot-preview.png",
       "tags": ["HTML5", "CSS3", "JavaScript"],
-      "description": "Travel agency chatbot with simple interface and basic interactions.",
-      "netlify": null,
+      "description": "A travel agency chatbot with a simple interface and basic conversational interactions. Designed to assist users with travel inquiries.",
+      "netlify": "https://planetchatbot.netlify.app/",
       "github": "https://github.com/Looziolooz/planetchatbot"
     },
     {
-      "id": 5,
+      "id": 8,
       "name": "Counter Passenger",
       "image": "/images/counterpassenger-preview.png",
       "tags": ["HTML5", "CSS3", "JavaScript"],
-      "description": "Passenger counter with history saving and futuristic design.",
+      "description": "A futuristic passenger counter app that saves history and offers a sleek interface. Useful for tracking and managing passenger flow.",
       "netlify": "https://traincounterpassenger.netlify.app/",
       "github": "https://github.com/Looziolooz/counterpassenger"
     },
     {
-      "id": 6,
+      "id": 9,
       "name": "Basketball Scoreboard",
       "image": "/images/basketballscoreboard-preview.png",
       "tags": ["HTML5", "CSS3", "JavaScript"],
-      "description": "Basketball scoreboard with keyboard shortcuts for quick score updates.",
+      "description": "A basketball scoreboard app with keyboard shortcuts for fast score updates.",
       "netlify": "https://basketball-scoreboard-looz.netlify.app/",
       "github": "https://github.com/Looziolooz/basketballscoreboard"
+    },
+    {
+      "id": 10,
+      "name": "Weather App",
+      "image": "/images/weatherapp-preview.png",
+      "tags": ["HTML5", "CSS3", "JavaScript", "APIs"],
+      "description": "A weather app with a 4-day forecast, dynamic background, and city search functionality.",
+      "netlify": "https://weather-se.netlify.app/",
+      "github": "https://github.com/Looziolooz/weatherapp"
     }
   ]
 }
