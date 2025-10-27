@@ -96,7 +96,7 @@ export const HERO_CONTENT = {
   greeting: "Hi, I'm Your Name",
   title: "Your Title",
   description: "Your description...",
-  profileImage: "/images/profile.png",
+  profileImage: "/public/profile.png",
 };
 ```
 
