@@ -69,7 +69,7 @@ export default function ContactSection() {
           <div className="relative w-52 h-52 mx-auto">
             <div className="absolute inset-0 bg-gray-200 rounded-full overflow-hidden shadow-lg">
               <Image
-                src="/images/profile.png"
+                src="/public/profile.png"
                 alt="Lorenzo Dastoli - Frontend Developer"
                 fill
                 className="object-cover"

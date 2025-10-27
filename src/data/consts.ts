@@ -25,7 +25,7 @@ export const HERO_CONTENT = {
   greeting: "Hi, I'm Lorenzo Dastoli",
   title: "Frontend Developer",
   description: "I love building things for the web—especially with React, Next.js, and TypeScript. I care about clean code, smooth user experiences, and learning as I go. Whether it’s solving tricky bugs or exploring new tools, I’m always curious and driven to improve. My goal is to create interfaces that feel good to use and are built to last.",
-  profileImage: "/images/profile.png", // I keep this path relative to public folder
+  profileImage: "/public/profile.png", // I keep this path relative to public folder
 };
 
 // Tech Section Content - I list my main technologies here
