@@ -166,7 +166,7 @@ Write your blog content here using MDX syntax.
 
 ### 6. Images
 
-- **Profile Image:** Replace `public/images/profile.png`
+- **Profile Image:** Replace `public/profile.png`
 - **Project Images:** Add to `public/images/`
 - **Blog Images:** Add to `public/blog/`
 
