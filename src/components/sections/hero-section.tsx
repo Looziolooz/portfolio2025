@@ -6,6 +6,7 @@ import { HERO_CONTENT, COLORS } from '@/data/consts';
 import ScrollArrow from '@/components/ui/scroll-arrow';
 
 export default function HeroSection() {
+  // Animation variants - I keep these consistent across the site
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -24,11 +25,11 @@ export default function HeroSection() {
     transition: { duration: 0.6, delay: 0.2 }
   };
 
+  // Smooth scroll to next section - I prefer this over anchor links
   const scrollToNextSection = () => {
-    const nextSection = document.querySelector('section:not(#hero-section)');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('tech-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   };
 
   return (
@@ -38,9 +39,9 @@ export default function HeroSection() {
       style={{ backgroundColor: COLORS.secondary }}
     >
       <div className="max-w-7xl w-full">
-        {/* Mobile & Tablet Layout (< 1024px) */}
+        {/* Mobile & Tablet Layout (< 1024px) - I stack everything vertically on smaller screens */}
         <div className="lg:hidden flex flex-col items-center text-center space-y-6 md:space-y-8">
-          {/* Profile Image */}
+          {/* Profile Image - This is the LCP element, so I use priority */}
           <motion.div
             {...scaleIn}
             className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-opacity-20"
@@ -53,11 +54,11 @@ export default function HeroSection() {
               sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
               className="object-cover"
               style={{ objectPosition: 'center center'}}
-              priority
+              priority // Critical for LCP performance
               />
           </motion.div>
 
-          {/* Text Content */}
+          {/* Text Content - I animate each element with slight delays for a smooth entrance */}
           <div className="space-y-3 md:space-y-4">
             <motion.h2 
               {...fadeInUp}
@@ -86,7 +87,7 @@ export default function HeroSection() {
             </motion.p>
           </div>
 
-          {/* Arrow Down */}
+          {/* Arrow Down - Encourages scrolling */}
           <ScrollArrow 
             color={COLORS.primary}
             size={32}
@@ -95,7 +96,7 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Desktop Layout (>= 1024px) */}
+        {/* Desktop Layout (>= 1024px) - I use a side-by-side layout for better use of space */}
         <div className="hidden lg:flex lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
           {/* Profile Image - Left Side */}
           <motion.div
@@ -110,7 +111,7 @@ export default function HeroSection() {
               sizes="(max-width: 1280px) 256px, 320px"
               className="object-cover"
               style={{ objectPosition: 'center center' }}
-              priority
+              priority // Still critical for LCP on desktop
             />
           </motion.div>
 
@@ -142,7 +143,7 @@ export default function HeroSection() {
               {HERO_CONTENT.description}
             </motion.p>
 
-            {/* Arrow Down - Desktop */}
+            {/* Arrow Down - Desktop version */}
             <ScrollArrow 
               color={COLORS.primary}
               size={40}

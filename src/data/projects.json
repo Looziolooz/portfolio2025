@@ -21,7 +21,7 @@
     {
       "id": 3,
       "name": "Pokedex",
-      "image": "/images/pokedex2-preview.png",
+      "image": "/images/pokedex2-preview.webp",
       "tags": ["Tailwind CSS", "HTML5", "CSS3"],
       "description": "A modern Pokédex interface built with Tailwind CSS. It displays Pokémon data in a responsive and visually engaging format.",
       "netlify": "https://loozio-pokedex.netlify.app/",

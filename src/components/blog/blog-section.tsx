@@ -27,11 +27,10 @@ export default function BlogSection({ posts }: BlogSectionProps) {
   };
 
   const scrollToTheNext = () => {
-    const skillsSection = document.getElementById('skills-section');
-    const nextSection = skillsSection?.nextElementSibling;
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // I directly navigate to the skills section instead of using nextElementSibling
+    document.getElementById('skills-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   };
 
   const displayPosts = posts.slice(0, 4);

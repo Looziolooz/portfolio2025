@@ -18,22 +18,23 @@ export default function SkillsSection() {
     }
   };
 
-    const scrollToBlog = () => {
-    document.getElementById('blog-section')?.scrollIntoView({ 
+  const scrollToProjects = () => {
+    document.getElementById('projects-section')?.scrollIntoView({ 
       behavior: 'smooth' 
     });
   };
 
   const scrollToContacts = () => {
-    const projectsSection = document.getElementById('contacts-section');
-    const nextSection = projectsSection?.nextElementSibling;
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('contact-section')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
   };
 
   return (
-    <section className="min-h-screen bg-teal-600 flex flex-col justify-center items-center relative px-4 py-12">
+    <section 
+      id="skills-section"
+      className="min-h-screen bg-teal-600 flex flex-col justify-center items-center relative px-4 py-12"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -58,20 +59,20 @@ export default function SkillsSection() {
         />
       </motion.div>
 
-   <div className="flex items-center gap-4 mt-12 md:mt-16">
-          <ScrollArrow 
-            color={COLORS.white}
-            size={32}
-            direction="up"
-            onClick={scrollToBlog}
-          />
-          <ScrollArrow 
-            color={COLORS.white}
-            size={32}
-            direction="down"
-            onClick={scrollToContacts}
-          />
-        </div>
+      <div className="flex items-center gap-4 mt-12 md:mt-16">
+        <ScrollArrow 
+          color={COLORS.white}
+          size={32}
+          direction="up"
+          onClick={scrollToProjects}
+        />
+        <ScrollArrow 
+          color={COLORS.white}
+          size={32}
+          direction="down"
+          onClick={scrollToContacts}
+        />
+      </div>
     </section>
   );
 }
