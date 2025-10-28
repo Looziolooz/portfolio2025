@@ -3,8 +3,7 @@
 A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations, optimized performance, and a clean design showcasing my projects and blog posts.
 
 ## vercel
-https://portfolio2025-eh00spew8-loozioloozs-projects.vercel.app/
-
+visit website [https://portfolio2025-eight-nu.vercel.app/](https://portfolio2025-eight-nu.vercel.app/)
 ## ✨ Features
 
 - 🎨 **Modern Design** - Clean, professional layout with smooth animations
